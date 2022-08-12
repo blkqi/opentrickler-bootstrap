@@ -1,19 +1,23 @@
 DEB := opentrickler-bootstrap.deb
 
-$(DEB): dist-init
-	dpkg-deb -b dist $@
-
 PYSRC := projects/trickler/peripheral/trickler \
 	projects/trickler/peripheral/server.sh \
 	projects/trickler/peripheral/bluetooth.sh \
 	projects/trickler/peripheral/leds.sh \
 	projects/trickler/peripheral/opentrickler_config.ini
 
-dist-init: $(PYSRC)
-	mkdir -p dist/code/opentrickler/
-	cp -a $^ dist/code/opentrickler/
+all: $(DEB)
+
+$(DEB): dist
+	dpkg-deb -b dist $@
+
+dist: dist/code/opentrickler
+
+dist/code/opentrickler: $(PYSRC)
+	mkdir -p $@
+	cp -a $^ $@
 
 clean:
-	rm -f opentrickler-bootstrap.deb
+	rm -f $(DEB)
 
-.PHONY: dist-init clean
+.PHONY: all dist clean
