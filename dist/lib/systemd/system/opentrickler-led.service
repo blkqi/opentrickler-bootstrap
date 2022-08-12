@@ -1,0 +1,11 @@
+[Unit]
+Description=opentrickler leds component
+PartOf=opentrickler.service
+
+[Service]
+ExecStart=/code/opentrickler/leds.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

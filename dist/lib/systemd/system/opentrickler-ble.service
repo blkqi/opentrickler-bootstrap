@@ -1,0 +1,11 @@
+[Unit]
+Description=opentrickler bluetooth component
+PartOf=opentrickler.service
+
+[Service]
+ExecStart=/code/opentrickler/bluetooth.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

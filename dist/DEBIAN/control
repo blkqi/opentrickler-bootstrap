@@ -1,6 +1,6 @@
 Package: opentrickler-bootstrap
 Version: 0.0.0
 Architecture: all
-Depends:
+Depends: chrony, bluetooth, memcached, python-pymemcache
 Maintainer: blk <blk@blk.me>
 Description: null

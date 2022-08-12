@@ -1,0 +1,13 @@
+[Unit]
+Description=opentrickler service
+After=chrony.service,bluetooth.service,memcached.service
+Requires=chrony.service,bluetooth.service,memcached.service,opentrickler-ble.service,opentrickler-led.service
+
+[Service]
+ExecStart=/code/opentrickler/server.sh
+Restart=always
+RestartSec=5
+
+[Install]
+Alias=opentrickler
+WantedBy=multi-user.target
