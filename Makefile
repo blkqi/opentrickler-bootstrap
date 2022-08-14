@@ -1,9 +1,6 @@
 DEB := opentrickler-bootstrap.deb
 
 PYSRC := projects/trickler/peripheral/trickler \
-	projects/trickler/peripheral/server.sh \
-	projects/trickler/peripheral/bluetooth.sh \
-	projects/trickler/peripheral/leds.sh \
 	projects/trickler/peripheral/opentrickler_config.ini
 
 all: $(DEB)

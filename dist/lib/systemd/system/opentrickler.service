@@ -7,7 +7,7 @@ Wants=opentrickler-led.service
 Wants=chrony.service
 
 [Service]
-ExecStart=/code/opentrickler/server.sh
+ExecStart=/code/opentrickler/trickler/main.py /code/opentrickler/opentrickler_config.ini
 Restart=always
 RestartSec=5
 

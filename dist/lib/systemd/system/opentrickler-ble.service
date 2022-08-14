@@ -6,7 +6,7 @@ Requires=bluetooth.service
 Requires=hciuart.service
 
 [Service]
-ExecStart=/code/opentrickler/bluetooth.sh
+ExecStart=/code/opentrickler/trickler/ble_v1.py /code/opentrickler/opentrickler_config.ini
 Restart=always
 RestartSec=5
 

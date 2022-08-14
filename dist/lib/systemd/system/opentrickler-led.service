@@ -3,7 +3,7 @@ Description=opentrickler leds component
 PartOf=opentrickler.service
 
 [Service]
-ExecStart=/code/opentrickler/leds.sh
+ExecStart=/code/opentrickler/trickler/leds.py /code/opentrickler/opentrickler_config.ini
 Restart=always
 RestartSec=5
 
