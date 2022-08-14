@@ -1,6 +1,9 @@
 [Unit]
 Description=opentrickler bluetooth component
 PartOf=opentrickler.service
+After=bluetooth.service
+Requires=bluetooth.service
+Requires=hciuart.service
 
 [Service]
 ExecStart=/code/opentrickler/bluetooth.sh

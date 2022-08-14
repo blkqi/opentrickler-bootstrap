@@ -1,7 +1,10 @@
 [Unit]
 Description=opentrickler service
-After=chrony.service,bluetooth.service,memcached.service
-Requires=chrony.service,bluetooth.service,memcached.service,opentrickler-ble.service,opentrickler-led.service
+After=memcached.service
+Requires=memcached.service
+Wants=opentrickler-ble.service
+Wants=opentrickler-led.service
+Wants=chrony.service
 
 [Service]
 ExecStart=/code/opentrickler/server.sh
